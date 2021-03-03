@@ -9,8 +9,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'js/[name].budle.js',
-    chunkFilename: 'js/[name].js',
+    filename: 'js/[name].[contenthash].js',
+    chunkFilename: 'js/[name].[contenthash].js',
   },
   optimization: {
     splitChunks: {

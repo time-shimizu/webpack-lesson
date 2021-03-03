@@ -15,8 +15,19 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'initial',
-      name: 'vendor',
-    }
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          name: 'vendor',
+        },
+        vendorModules: {
+          test: /src[\\/]js[\\/]modules/,
+          name: 'vendor-modules',
+          minSize: 0,
+          minChunks: 2,
+        }
+      }
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),

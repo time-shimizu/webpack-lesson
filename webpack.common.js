@@ -9,7 +9,14 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'js/[name].budle.js'
+    filename: 'js/[name].budle.js',
+    chunkFilename: 'js/[name].js',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'initial',
+      name: 'vendor',
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),

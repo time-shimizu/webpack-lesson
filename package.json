@@ -1,9 +1,10 @@
 {
   "name": "webpack-lesson",
   "scripts": {
+    "lint": "eslint src/js --fix",
     "start": "webpack-dev-server --config webpack.dev.js",
     "dev": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "npm run lint && webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
